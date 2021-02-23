@@ -1,6 +1,6 @@
-package net.Dong.chess;
+package net.Dong.piece;
 
-public class Pawn {
+public class Piece {
     public static final int InitialNumOfPawn = 8;
     private final Color color;
 
@@ -10,16 +10,16 @@ public class Pawn {
     }
 
 
-    public Pawn() {
+    public Piece() {
         this.color = Color.WHITE;
     }
 
-    public Pawn(Color color) {
+    public Piece(Color color) {
         this.color = color;
     }
 
 
-    public Pawn(String colorString) {
+    public Piece(String colorString) {
         if (colorString.equals("BLACK")) {
             this.color = Color.BLACK;
         } else {
