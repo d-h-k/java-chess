@@ -9,14 +9,12 @@ public class Piece {
         BLACK;
     }
 
-
-    public Piece() {
-        this.color = Color.WHITE;
-    }
-
-    public Piece(Color color) {
+    private Piece(Color color) {
         this.color = color;
     }
+
+    /*public Piece() {this.color = Color.WHITE;    }
+    //public Piece(Color color) {        this.color = color;    }
 
 
     public Piece(String colorString) {
@@ -26,7 +24,7 @@ public class Piece {
             this.color = Color.WHITE;
         }
     }
-
+    */
     public Color getColor() {
         return this.color;
     }
