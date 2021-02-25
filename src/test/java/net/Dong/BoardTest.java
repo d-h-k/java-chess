@@ -1,6 +1,7 @@
 package net.Dong;
 
 import net.Dong.chess.Board;
+import org.junit.jupiter.api.BeforeEach;
 import net.Dong.piece.Piece;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,7 +12,12 @@ import net.Dong.piece.Piece.*;
 
 
 class BoardTest {
+    private Board board;
 
+    @BeforeEach
+    public void setup() {
+        board = new Board();
+    }
 
     @Test
     @DisplayName("pawn create test")
@@ -28,14 +34,32 @@ class BoardTest {
         assertThat(board.size()).isEqualTo(2);
         assertThat(board.findBlackPawn(0)).isEqualTo(black);
     }
+    void addBlackPawnToBoard(Board board, Pawn pawn, int sizeOfAllPawns, int indexOfPawn) {
+        board.addBlackPawn(pawn);
+        assertThat(board.size()).isEqualTo(sizeOfAllPawns);
+        assertThat(board.findBlackPawn(indexOfPawn)).isEqualTo(pawn);
+    }
+
+
 
 
     @Test
-    @DisplayName("board initialize test")
-    void boardInitialize() {
-        Board board = new Board();
+    @DisplayName("board initialize Test")
+    void boardInitializeTest() {
+        String initBoard =
+                "........" + System.lineSeparator() +
+                        "PPPPPPPP" + System.lineSeparator() +
+                        "........" + System.lineSeparator() +
+                        "........" + System.lineSeparator() +
+                        "........" + System.lineSeparator() +
+                        "........" + System.lineSeparator() +
+                        "pppppppp" + System.lineSeparator() +
+                        "........"+ System.lineSeparator() ;
+
         board.initialize();
         assertThat(board.getWhitePawnsResult()).isEqualTo("pppppppp");
         assertThat(board.getBlackPawnsResult()).isEqualTo("PPPPPPPP");
+        assertThat(initBoard).isEqualTo(board.print());
     }
+
 }
