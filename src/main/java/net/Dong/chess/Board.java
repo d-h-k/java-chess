@@ -13,8 +13,7 @@ public class Board {
 
 
     private static final String EMPTYLINE = "........";
-    private static final String NEWLINE = System.getProperty("line.separator");
-
+    private static final String NEWLINE = "\n\r";
 
     public void addWhitePawn(Piece pawn) {
         whitePawn.add(pawn);
@@ -32,7 +31,7 @@ public class Board {
         return whitePawn.size();
     }
 
-    private int blackPawnSize() {
+    public int blackPawnSize() {
         return blackPawn.size();
     }
 
@@ -77,7 +76,7 @@ public class Board {
         return sb.toString();
     }
 
-    public String print() {
+    public void print() {
         StringBuilder sb = new StringBuilder();
         sb.append(EMPTYLINE).append(NEWLINE);
         sb.append(getBlackPawnsResult()).append(NEWLINE);
@@ -87,6 +86,6 @@ public class Board {
         sb.append(EMPTYLINE).append(NEWLINE);
         sb.append(getWhitePawnsResult()).append(NEWLINE);
         sb.append(EMPTYLINE).append(NEWLINE);
-        return sb.toString();
+        System.out.println(sb.toString());
     }
 }
