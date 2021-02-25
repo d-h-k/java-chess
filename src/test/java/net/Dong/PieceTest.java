@@ -12,7 +12,7 @@ class PieceTest {
 
     @Test
     @DisplayName("Pawn Color Test")
-    void PawnColorTest() {
+    void PawnCreate() {
         verifyPawnColor(Color.WHITE);
         verifyPawnColor(Color.BLACK);
     }
