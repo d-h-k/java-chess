@@ -21,14 +21,24 @@ class BoardTest {
 
     @Test
     void createPawnTest() {
-        Pawn white = new Pawn(Color.WHITE);
-        Pawn black = new Pawn(Color.BLACK);
-        addWhitePawnToBoard(board,white,0);
-        addBlackPawnToBoard(board,black,0);
-        addWhitePawnToBoard(board,white,1);
-        addBlackPawnToBoard(board,black,1);
-        addWhitePawnToBoard(board,white,2);
-        addBlackPawnToBoard(board,black,2);
+
+        Pawn white1 = new Pawn(Color.WHITE);
+        Pawn black1 = new Pawn(Color.BLACK);
+        int indexOfPawn = 0;
+        addWhitePawnToBoard(board,white1,indexOfPawn);
+        addBlackPawnToBoard(board,black1,indexOfPawn);
+
+        Pawn white2 = new Pawn(Color.WHITE);
+        Pawn black2 = new Pawn(Color.BLACK);
+        indexOfPawn = 1;
+        addWhitePawnToBoard(board,white2,indexOfPawn);
+        addBlackPawnToBoard(board,black2,indexOfPawn);
+
+        Pawn white3 = new Pawn(Color.WHITE);
+        Pawn black3 = new Pawn(Color.BLACK);
+        indexOfPawn = 2;
+        addWhitePawnToBoard(board,white3,indexOfPawn);
+        addBlackPawnToBoard(board,black3,indexOfPawn);
     }
     void addWhitePawnToBoard(Board board, Pawn pawn, int indexOfPawn) {
         board.addWhitePawn(pawn);
