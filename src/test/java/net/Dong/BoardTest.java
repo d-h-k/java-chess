@@ -5,7 +5,7 @@ import net.Dong.chess.Pawn;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
+import static net.Dong.chess.Board.NEW_LINE;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import net.Dong.chess.Pawn.*;
@@ -45,14 +45,14 @@ class BoardTest {
     @Test
     void boardInitializeTest() {
         String expectedString =
-                "........" + System.lineSeparator() +
-                        "PPPPPPPP" + System.lineSeparator() +
-                        "........" + System.lineSeparator() +
-                        "........" + System.lineSeparator() +
-                        "........" + System.lineSeparator() +
-                        "........" + System.lineSeparator() +
-                        "pppppppp" + System.lineSeparator() +
-                        "........"+ System.lineSeparator() ;
+                "........" + NEW_LINE +
+                        "PPPPPPPP" + NEW_LINE +
+                        "........" + NEW_LINE +
+                        "........" + NEW_LINE +
+                        "........" + NEW_LINE +
+                        "........" + NEW_LINE +
+                        "pppppppp" + NEW_LINE +
+                        "........"+ NEW_LINE ;
 
         board.initialize();
         assertThat(board.getWhitePawnsResult()).isEqualTo("pppppppp");
